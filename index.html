@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shared Whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fabric@4.5.1/dist/fabric.min.js"></script>
+  
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="createBoard">Create Board</button>
+    <button id="joinBoard">Join Board</button>
+    <button id="clear">Clear</button>
+    <h1 id="boardCode">Board code:</h1>
+    <h2 id="participants">Participants:</h2>
+    
+    <div class="hero">
+      <label for="drawing-color">Drawing Color:</label>
+      <input type="color" id="drawing-color" value="#000000" />
+
+      <label for="drawing-line-width">Line Width:</label>
+      <input
+        type="range"
+        id="drawing-line-width"
+        min="1"
+        max="50"
+        value="1"
+        class="slider"
+      />
+      <div id="demo"></div>
+    </div>
+
+    <canvas id="c" width="800" height="600"></canvas>
+
+    <!-- Load the script here to ensure the DOM is ready -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
